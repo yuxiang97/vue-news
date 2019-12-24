@@ -7,6 +7,8 @@ import 'mavon-editor/dist/css/index.css'
 import './components/element-components'
 import 'normalize.css'
 
+
+
 Vue.config.productionTip = false;
 Vue.use(mavonEditor)
 

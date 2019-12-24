@@ -6,7 +6,7 @@
             <el-button type="info" @click="linkTo">修改文章</el-button>
         </div>
         <h1>{{article.title}}</h1>
-        <p>{{article.value}}</p>
+        <div v-html="article.value"></div>
     </div>
 </template>
 

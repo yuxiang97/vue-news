@@ -2,7 +2,7 @@
 <div>
     <el-button type="primary" @click="$router.back(-1)">后退</el-button>
     <h4>{{article.title}}</h4>
-    <p>{{article.value}}</p>
+    <div v-html="article.value"></div>
 </div>
 </template>
 

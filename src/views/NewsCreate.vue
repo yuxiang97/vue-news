@@ -12,9 +12,10 @@
                 描述: <input type="text" maxlength="40" v-model="article.describe">
             </div>
         </div>
-        <div id="main">
-            <mavon-editor v-model="article.value"/>
-        </div>
+        <!--<div id="main">-->
+            <!--<mavon-editor v-model="article.value"/>-->
+        <!--</div>-->
+        <vue-editor v-model="article.value"></vue-editor>
         <el-button type="primary" class="create-article" @click="articleCreate">
             创建文章
         </el-button>
@@ -23,18 +24,21 @@
 
 <script>
 import axios from 'axios'
+import { VueEditor } from "vue2-editor";
 
 export default {
 name: "NewsCreate",
   data() {
     return {
-      value: '' ,
       article:{
         describe: '',
         title: '',
         value: '' ,
       }
     }
+  },
+  components: {
+    VueEditor
   },
   methods:{
     async articleCreate() {

@@ -10,9 +10,10 @@
                 描述: <input type="text" maxlength="40" v-model="article.describe">
             </div>
         </div>
-        <div id="main" class="main">
-            <mavon-editor v-model="article.value"/>
-        </div>
+        <!--<div id="main" class="main">-->
+            <!--<mavon-editor v-model="article.value"/>-->
+        <!--</div>-->
+        <vue-editor v-model="article.value" placeholder="请输入"></vue-editor>
         <el-button type="primary" class="create-article" @click="submitArticle">
             确认修改
         </el-button>
@@ -21,6 +22,7 @@
 
 <script>
 import axios from 'axios'
+import { VueEditor } from "vue2-editor";
 export default {
 name: "ArticleEdit",
 data(){
@@ -28,6 +30,9 @@ data(){
     value: '' ,
     article:{}
   }
+},
+components: {
+VueEditor
 },
 created() {
   this.getArticle()
